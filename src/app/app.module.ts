@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -11,6 +12,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ManagementResponseComponent } from './management-response/management-response.component';
 import { UserComponent } from './user/user.component';
+
+const routes: Routes = [
+  {path:"home", component: HomeComponent},
+  {path:"login", component: LoginComponent},
+  {path:"about", component: AboutComponent}
+];
 
 @NgModule({
   declarations: [
@@ -26,7 +33,11 @@ import { UserComponent } from './user/user.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

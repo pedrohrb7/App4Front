@@ -1,1 +1,94 @@
-<p>home works!</p>
+<main>
+    <div class="container main--content">
+
+        <h2>Novo Cadastro</h2>
+        <hr>
+
+        <div class="message">
+            
+        </div>
+
+        <form action="" name="form-Index" id="form-Index" onsubmit="return sendForm();">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="form--content form-group">
+                        <label for="name">Nome:</label>
+                        <input class="form-control" type="text" name="name" id="name" placeholder="Nome completo">
+
+                        <label for="email">Email:</label>
+                        <input class="form-control" type="text" name="email" id="email" placeholder="Endereço de email">
+
+                        <label for="phone">Telefone:</label>
+                        <input class="form-control" type="tel" oninput="masktelefone(this, 'tel')" name="phone" id="phone" placeholder="Telefone">
+
+                        <label for="subject">Assunto</label>
+                        <select name="subject" id="subject" class="form-control">
+                            <option value="">Selecione um assunto</option>
+                        </select>
+
+                        <label for="msg-content">Conteúdo:</label>
+                        <textarea name="msg-content" id="msg-content" rows="4" class="form-control"></textarea>
+
+                        <div id="buttons">
+                            <button class="btn cancel--button">Cancelar</button>
+                            <button type="submit" class="btn send--button">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="form--content__contact">
+
+                        <h2>Informações de Contato</h2>
+                        <h3>Forma de contato:</h3>
+
+                        <div class="form-check">
+                            <input type="radio" name="conta" id="email-contact" class="form-check-input"
+                                value="email">
+                            <label for="email-contact"> Email </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" name="conta" id="tel-contact" class="form-check-input"
+                                value="Telefone">
+                            <label for="tel-contact">Telefone</label>
+                        </div>
+
+                        <h3>Disponibilidade para contato:</h3>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="input-comercial" value="comercial">
+                            <label class="form-check-label" for="input-comercial">Seg. a Sexta - horário
+                                comercial</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="input-manha" value="manha">
+                            <label class="form-check-label" for="input-manha">Seg. a Sexta - Período da
+                                manhã</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="input-tarde" value="tarde">
+                            <label class="form-check-label" for="input-tarde">Seg. a Sexta - Período da
+                                manhã</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="input-noite" value="noite">
+                            <label class="form-check-label" for="input-noite">Seg. a Sexta - Período da
+                                tarde</label>
+                        </div>
+
+                        <div class="form-check">
+                            <div class="form-others">
+                                <label for="text-input" class="form-check-label">Outros:</label>
+                                <input class="form-control" type="text" id="text-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>

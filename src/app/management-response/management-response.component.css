@@ -1,0 +1,74 @@
+html, body {
+    margin: 0;
+    padding: 5px;
+    height: 97vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: auto;
+    margin: 0px;
+    box-shadow: 0px 1px 3px 0px #545454;
+    border-radius: 13px;
+    background: #fff;
+    padding: 10px;
+    font-family: 'open_sanssemibold', sans-serif;
+}
+
+.container .title h3 {
+    color: #30BF97;
+    padding: 10px 0 5px 0;
+    font-family: 'open_sansbold', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+.container .management__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    padding: 15px 0 10px 0;
+    font-size: 12px;
+    color: #545454;
+    border-top: 1px solid #545454;
+    width: auto;
+}
+
+.container .management__list .list__name,
+.list__email,
+.list__subject,
+.list__content {
+    margin: 0 5px;
+    width: 15%;
+    word-wrap: break-word;
+}
+
+.container .management__list .list__contact__form,
+.list__phone,
+.list__availability__contact {
+    margin: 0 5px;
+    width: 10%;
+    word-wrap: break-word;
+}
+
+
+/* MOBILE */
+@media only screen and (max-width: 900px) {
+    .container .management__list {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .container .management__list .list__name,
+    .list__email,
+    .list__subject,
+    .list__content,
+    .list__contact__form,
+    .list__phone,
+    .list__availability__contact {
+        margin: 5px 5px;
+        min-width: 100%;
+    }
+}

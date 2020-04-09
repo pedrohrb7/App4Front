@@ -9,6 +9,8 @@ import { ManagementComponent } from './management/management.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ManagementResponseComponent } from './management-response/management-response.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     ManagementComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ManagementResponseComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

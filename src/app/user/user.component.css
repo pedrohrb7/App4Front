@@ -1,0 +1,126 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    margin: 0px;
+    box-sizing: content-box;
+    box-shadow: 0px 1px 3px 0px #545454;
+    border-radius: 13px;
+    background: #fff;
+}
+
+.login .login__img {
+    margin: 20px auto 0 auto;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #545454;
+    border-radius: 100px;
+}
+
+.login .login__img img {
+    width: 150px;
+}
+
+.login .login__user {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.login .login__user p{
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'open_sansbold', sans-serif;
+    color: #545454;
+    margin: 0;
+}
+
+.login .login__management {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.login .login__management h3 {
+    background-color: #30BF97;
+    padding: 8px 15px;
+    font-family: 'open_sansbold', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+}
+
+.login .login__management p {
+    margin: 15px 0;
+    padding-left: 15px;
+}
+
+.login .login__management p a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #545454;
+    transition: ease-in-out .2s; 
+}
+
+.login .login__management p a:hover {
+    color: #0F8E6B;
+}
+
+.login .btn__exit {
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+}
+
+.login .btn__exit button {
+    background: #30BF97;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 13px;
+    padding: 1em;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+.login .btn__exit button:hover {
+    background: #0F8E6B;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    html, body {
+        height: auto;
+    }
+
+    .login {
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin-bottom: -100px;
+    }
+
+    .login__management {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .login__management .pages, .quiz {
+        margin: 0 5px;
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .login__management {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

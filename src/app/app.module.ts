@@ -2,11 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-import { LoginComponent } from './login/login.component';
-=======
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -22,18 +19,10 @@ const routes: Routes = [
   {path:"login", component: LoginComponent},
   {path:"about", component: AboutComponent}
 ];
->>>>>>> master
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-=======
     AboutComponent,
     HomeComponent,
     LoginComponent,
@@ -50,7 +39,6 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
->>>>>>> master
   ],
   providers: [],
   bootstrap: [AppComponent]

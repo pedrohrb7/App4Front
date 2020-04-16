@@ -28,7 +28,7 @@
               "src/assets/css/bootstrap.min.css"
             ],
             "scripts": [
-              "src/assets/js/bootstrap.min.js"
+             
             ]
           },
           "configurations": {

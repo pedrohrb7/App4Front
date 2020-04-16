@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -12,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ManagementResponseComponent } from './management-response/management-response.component';
 import { UserComponent } from './user/user.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
   {path:"home", component: HomeComponent},
@@ -34,7 +36,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   exports: [
     RouterModule

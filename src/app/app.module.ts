@@ -12,11 +12,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ManagementResponseComponent } from './management-response/management-response.component';
 import { UserComponent } from './user/user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {path:"home", component: HomeComponent},
   {path:"login", component: LoginComponent},
-  {path:"about", component: AboutComponent}
+  {path:"about", component: AboutComponent},
+  {path:"management-response", component: ManagementResponseComponent}
 ];
 
 @NgModule({
@@ -34,6 +36,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   exports: [

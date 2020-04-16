@@ -8,31 +8,26 @@
             
         </div>
 
-        <form action="" name="form-Index" id="form-Index" onsubmit="return sendForm();">
+        <form action="" name="form-Index" id="form-Index" (ngSubmit)="cadastrar()">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="form--content form-group">
                         <label for="name">Nome:</label>
-                        <input class="form-control" type="text" name="name" id="name" placeholder="Nome completo">
+                        <input [(ngModel)]="name" class="form-control" type="text" name="name" id="name" placeholder="Nome completo" required>
 
                         <label for="email">Email:</label>
-                        <input class="form-control" type="text" name="email" id="email" placeholder="Endereço de email">
+                        <input [(ngModel)]="email" class="form-control" type="email" name="email" id="email" placeholder="Endereço de email" required>
 
                         <label for="phone">Telefone:</label>
-                        <input class="form-control" type="tel" oninput="masktelefone(this, 'tel')" name="phone" id="phone" placeholder="Telefone">
+                        <input [(ngModel)]="phone" class="form-control" type="tel" oninput="masktelefone(this, 'tel')" name="phone" id="phone" placeholder="Telefone" required>
 
                         <label for="subject">Assunto</label>
                         <select name="subject" id="subject" class="form-control">
                             <option value="">Selecione um assunto</option>
                         </select>
 
-                        <label for="msg-content">Conteúdo:</label>
-                        <textarea name="msg-content" id="msg-content" rows="4" class="form-control"></textarea>
-
-                        <div id="buttons">
-                            <button class="btn cancel--button">Cancelar</button>
-                            <button type="submit" class="btn send--button">Enviar</button>
-                        </div>
+                        <label for="msgContent">Conteúdo:</label>
+                        <textarea [(ngModel)]="msgContent" name="msgContent" id="msgContent" rows="4" class="form-control" required></textarea>
                     </div>
                 </div>
 
@@ -87,6 +82,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div id="buttons">
+                    <button class="btn cancel--button">Cancelar</button>
+                    <button type="submit" class="btn send--button">Enviar</button>
                 </div>
             </div>
         </form>

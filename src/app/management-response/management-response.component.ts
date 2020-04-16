@@ -1,3 +1,4 @@
+import { QuestionarioService } from './../services/questionario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagementResponseComponent implements OnInit {
 
-  constructor() { }
+  public listar = [];
 
-  ngOnInit(): void {
+  constructor(private questionarioservice: QuestionarioService) { }
+
+  ngOnInit() {
+      this.questionarioservice.getData().subscribe((data:any) => {
+      this.listar = data.records;
+      console.log(this.listar);
+    });
   }
 
 }

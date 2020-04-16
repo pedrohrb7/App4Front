@@ -13,7 +13,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ManagementResponseComponent } from './management-response/management-response.component';
 import { UserComponent } from './user/user.component';
-import { from } from 'rxjs';
 
 const routes: Routes = [
   {path:"home", component: HomeComponent},

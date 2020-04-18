@@ -1,29 +1,8 @@
-/* @font-face {
-    font-family: 'open sans bold';
-    src: url('/src/assets/fonts/opensans-bold-webfont.woff2') format('woff2'), url('/src/assets/fonts/opensans-bold-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Open Sans Extra-bold';
-    src: url('/src/assets/fontsopensans-extrabold-webfont.woff2') format('woff2'), url('/src/assets/fonts/opensans-extrabold-webfont.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Open Sans Semi-bold';
-    src: url('/src/assets/fontsopensans-semibold-webfont.woff2') format('woff2'), url('/src/assets/fonts/opensans-semibold-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-} */
-
 .header {
     /*container do cabeçalho*/
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 5px rgb(84, 84, 84);
-    margin-bottom: 30px;
+    margin: 3px 0;
 }
 
 .header a {

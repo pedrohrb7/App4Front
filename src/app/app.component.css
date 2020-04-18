@@ -1,51 +1,4 @@
-@font-face {
-  font-family: 'open sans bold';
-  src: url('../assets/media/fonts/opensans-bold-webfont.woff2') format('woff2'),
-  url('../assets/media/fonts/opensans-bold-webfont.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Open Sans Extra-bold';
-  src: url('../assets/media/fonts/opensans-extrabold-webfont.woff2') format('woff2'),
-  url('../assets/media/fonts/opensans-extrabold-webfont.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Open Sans Semi-bold';
-  src: url('../assets/media/fonts/opensans-semibold-webfont.woff2') format('woff2'),
-  url('../assets/media/fonts/opensans-semibold-webfont.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-/** Fim das configurções de fonte **/
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: rgb(236, 236, 236);
-  margin: 0;
-  overflow-x: hidden;
-}
-
-h2 {
-  color: rgb(48, 191, 151);
-  font-family: 'Open Sans Bold';
-}
-
-label {
-  font-family: 'Open Sans';
-}
-
-/****************************************/
-
 .header {
-  /*container do cabeçalho*/
   background-color: rgb(255, 255, 255);
   box-shadow: 0 1px 5px rgb(84, 84, 84);
   margin-bottom: 30px;
@@ -79,21 +32,4 @@ label {
 .global-menu .login {
   border: 3px solid rgb(48, 191, 151);
   border-radius: 25px;
-}
-
-/* Fim do CSS aplicado ao header da página */
-
-
-
-/* Inicio do CSS aplicado ao footer */
-
-.footer {
-  margin-top: 50px;
-  margin-bottom: 0;
-  padding: 15px;
-  background: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  font-family: 'Open Sans bold';
-  font-size: 16px;
-  text-align: center;
 }

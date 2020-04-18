@@ -7,36 +7,11 @@ label {
     font-family: 'Open Sans';
 }
 
-
-/* Fim do CSS global (global pq alguns styles não estão aplicados apenas a uma tag específica) */
-
-
-/****************************************/
-
-.global-menu {
-    padding: 20px;
+#page {
+  background: rgb(236, 236, 236);
+  padding: 5%;
+  overflow-x: hidden;
 }
-
-.global-menu a {
-    font-size: 15px;
-    padding: 10px;
-}
-
-.global-menu a:hover {
-    text-decoration: none;
-    border: 3px solid hsl(163, 60%, 47%);
-    background: rgb(48, 191, 151);
-    border-radius: 25px;
-}
-
-.global-menu .login {
-    border: 3px solid rgb(48, 191, 151);
-    border-radius: 25px;
-}
-
-
-/* Fim do CSS aplicado ao header da página */
-
 
 /**************************************************************************/
 .main--content {
@@ -103,6 +78,3 @@ form .send--button {
 .form--content__contact h3 {
     font-size: 18px;
 }
-
-
-/* Style aplicado para o footer */

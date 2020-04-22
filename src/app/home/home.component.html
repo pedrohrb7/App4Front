@@ -9,12 +9,12 @@
             <div class="message">
             
             </div>
-            <form action="" name="form-Index" id="form-Index" (ngSubmit)="cadastrar()">
+            <form name="form-Index" id="form-Index" (ngSubmit)="cadastrar()">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <div class="form--content form-group">
                             <label for="name">Nome:</label>
-                            <input [(ngModel)]="name" #v_name="ngModel" class="form-control" type="text" name="name"
+                            <input [(ngModel)]="data.records[0].fields.Nome" #v_name="ngModel" class="form-control" type="text" name="name"
                                 id="name" minlength="3" placeholder="Nome completo" required>
                             <div *ngIf="v_name.invalid && (v_name.dirty || v_name.touched)" class="alert alert-danger">
                                 <div *ngIf="v_name.errors.required">
@@ -26,7 +26,7 @@
                             </div>
 
                             <label for="email">Email:</label>
-                            <input [(ngModel)]="email" #v_email="ngModel" class="form-control" type="email" name="email"
+                            <input [(ngModel)]="data.records[0].fields.Email" #v_email="ngModel" class="form-control" type="email" name="email"
                                 id="email" placeholder="Endereço de email"
                                 title="Preencha o campo no seguinte modelo: email@dominio.com" required="required"
                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
@@ -41,7 +41,7 @@
                             </div>
 
                             <label for="phone">Telefone:</label>
-                            <input [(ngModel)]="phone" #v_phone="ngModel" class="form-control" type="tel" name="phone"
+                            <input [(ngModel)]="data.records[0].fields.Telefone" #v_phone="ngModel" class="form-control" type="tel" name="phone"
                                 id="phone" placeholder="Telefone" title="Preencha o telfone" required="required"
                                 pattern="\([0-9]{2}\)[\s][0-9]{4,5}-[0-9]{4}">
                             <div *ngIf="v_phone.invalid && (v_phone.dirty || v_phone.touched)"
@@ -61,7 +61,7 @@
                             </select>
 
                             <label for="msgContent">Conteúdo:</label>
-                            <textarea [(ngModel)]="msgContent" name="msgContent" id="msgContent" rows="4"
+                            <textarea [(ngModel)]="data.records[0].fields['Conteúdo']" name="msgContent" id="msgContent" rows="4"
                                 class="form-control" required></textarea>
                         </div>
                     </div>
@@ -73,13 +73,13 @@
                             <h3>Forma de contato:</h3>
 
                             <div class="form-check">
-                                <input type="radio" name="conta" id="email-contact" class="form-check-input"
+                                <input [(ngModel)]="data.records[0].fields['Forma de contato']" type="radio" name="conta" id="email-contact" class="form-check-input"
                                     value="email">
                                 <label for="email-contact"> Email </label>
                             </div>
 
                             <div class="form-check">
-                                <input type="radio" name="conta" id="tel-contact" class="form-check-input"
+                                <input [(ngModel)]="data.records[0].fields['Forma de contato']" type="radio" name="conta" id="tel-contact" class="form-check-input"
                                     value="Telefone">
                                 <label for="tel-contact">Telefone</label>
                             </div>
@@ -87,33 +87,33 @@
                             <h3>Disponibilidade para contato:</h3>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="input-comercial" value="comercial">
+                                <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-check-input" type="checkbox" name="disp1" id="input-comercial" value="comercial">
                                 <label class="form-check-label" for="input-comercial">Seg. a Sexta - horário
                                     comercial</label>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="input-manha" value="manha">
+                                <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-check-input" type="checkbox" name="disp2" id="input-manha" value="manha">
                                 <label class="form-check-label" for="input-manha">Seg. a Sexta - Período da
                                     manhã</label>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="input-tarde" value="tarde">
+                                <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-check-input" type="checkbox" name="disp3" id="input-tarde" value="tarde">
                                 <label class="form-check-label" for="input-tarde">Seg. a Sexta - Período da
-                                    manhã</label>
+                                    tarde</label>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="input-noite" value="noite">
+                                <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-check-input" type="checkbox" name="disp4" id="input-noite" value="noite">
                                 <label class="form-check-label" for="input-noite">Seg. a Sexta - Período da
-                                    tarde</label>
+                                    noite</label>
                             </div>
 
                             <div class="form-check">
                                 <div class="form-others">
                                     <label for="text-input" class="form-check-label">Outros:</label>
-                                    <input class="form-control" type="text" id="text-input">
+                                    <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-control" type="text" name="disp5" id="text-input">
                                 </div>
                             </div>
                         </div>

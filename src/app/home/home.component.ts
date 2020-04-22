@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { QuestionarioService } from '../services/questionario.service';
 
 @Component({
   templateUrl: './home.component.html',
@@ -13,17 +15,33 @@ export class HomeComponent implements OnInit {
   public subject: string;
   public msgContent: string;
 
+
+constructor(
+  private http: HttpClient,
+  private questionario: QuestionarioService
+){ }
+
+data:any = {
+  "records": [
+    {
+      "fields": { 
+        "Nome": " ",
+        "Email": " ",
+        "Telefone": " ",
+        "Conteúdo": " ",
+        "Forma de contato": " ",
+        "Disponibilidade para contato": " "
+      }
+    }
+  ]
+}
+
 cadastrar (){
-  console.log(this.name);
-  console.log(this.email);
-
-  return true
+  console.log('ta indo')  
+  this.questionario.postData(this.data).subscribe(res => {
+  console.log(res)
+  })
 }
-
-constructor(){
-
-}
-
   ngOnInit(): void {
   }
 

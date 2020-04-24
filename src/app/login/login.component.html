@@ -8,20 +8,20 @@
             </div>
 
             <div class="login__form">
-                <form  method="post" >
+                <form (ngSubmit)="validaLogin();" method="post">
 
                     <div class="login__email">
                         <label for="email">
                             <i class="far fa-envelope"></i>
                         </label>
-                        <input type="text" required>
+                        <input [(ngModel)]="login" name="login" type="text" required>
                     </div>
 
                     <div class="login__password">
                         <label for="password">
                             <i class="fas fa-lock"></i>
                         </label>
-                        <input type="password" required>
+                        <input [(ngModel)]="passwd" name="passwd" type="password" required>
                     </div>
 
                     <div class="login__btn">

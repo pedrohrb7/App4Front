@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ManagementResponseComponent implements OnInit {
 
   public listar = [];
+  pag: number = 1;
 
   constructor(private questionarioservice: QuestionarioService) { }
 

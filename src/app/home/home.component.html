@@ -3,14 +3,17 @@
     <div class="container">
         <div class="main--content">
 
-            <h2>Novo Cadastro</h2>
+            <h2 *ngIf="!enviado">Novo Cadastro</h2>
             <hr>
             <div class="message"></div>
             <div class="message">
             
             </div>
             <form name="form-Index" id="form-Index" (ngSubmit)="cadastrar()">
-                <div class="row">
+                <div *ngIf="enviado" id="formSend"> 
+                    Seu cadastro foi enviado.<br>Obrigado!
+                </div>
+                <div *ngIf="!enviado" class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <div class="form--content form-group">
                             <label for="name">Nome:</label>
@@ -42,7 +45,7 @@
 
                             <label for="phone">Telefone:</label>
                             <input [(ngModel)]="data.records[0].fields.Telefone" #v_phone="ngModel" class="form-control" type="tel" name="phone"
-                                id="phone" placeholder="Telefone" title="Preencha o telfone" required="required"
+                                id="phone" placeholder="Telefone" title="Preencha o telefone" required="required"
                                 pattern="\([0-9]{2}\)[\s][0-9]{4,5}-[0-9]{4}">
                             <div *ngIf="v_phone.invalid && (v_phone.dirty || v_phone.touched)"
                                 class="alert alert-danger">
@@ -50,14 +53,14 @@
                                     O campo "Telefone" precisa ser preenchido.
                                 </div>
                                 <div *ngIf="v_phone.errors.pattern">
-                                    Digite um formato correto para phone.
+                                    Digite um formato correto para telefone.
                                 </div>
                             </div>
 
                             <label for="subject">Assunto</label>
-                            <select name="subject" id="subject" class="form-control">
-                                <option value="">Assunto 1</option>
-                                <option value="">Assunto 2</option>
+                            <select [(ngModel)]="data.records[0].fields['Assunto']" name="subject" id="subject" class="form-control" required>
+                                <option value="assunto1">Assunto 1</option>
+                                <option value="assunto2">Assunto 2</option>
                             </select>
 
                             <label for="msgContent">Conteúdo:</label>
@@ -74,7 +77,7 @@
 
                             <div class="form-check">
                                 <input [(ngModel)]="data.records[0].fields['Forma de contato']" type="radio" name="conta" id="email-contact" class="form-check-input"
-                                    value="email">
+                                    value="Email">
                                 <label for="email-contact"> Email </label>
                             </div>
 
@@ -87,25 +90,25 @@
                             <h3>Disponibilidade para contato:</h3>
 
                             <div class="form-check">
-                                <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-check-input" type="checkbox" name="disp1" id="input-comercial" value="comercial">
+                                <input [(ngModel)]="disponibilidade['Comercial']" class="form-check-input" type="checkbox" name="disp1" id="input-comercial" value="comercial">
                                 <label class="form-check-label" for="input-comercial">Seg. a Sexta - horário
                                     comercial</label>
                             </div>
 
                             <div class="form-check">
-                                <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-check-input" type="checkbox" name="disp2" id="input-manha" value="manha">
+                                <input [(ngModel)]="disponibilidade['Manha']" class="form-check-input" type="checkbox" name="disp2" id="input-manha" value="manha">
                                 <label class="form-check-label" for="input-manha">Seg. a Sexta - Período da
                                     manhã</label>
                             </div>
 
                             <div class="form-check">
-                                <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-check-input" type="checkbox" name="disp3" id="input-tarde" value="tarde">
+                                <input [(ngModel)]="disponibilidade['Tarde']" class="form-check-input" type="checkbox" name="disp3" id="input-tarde" value="tarde">
                                 <label class="form-check-label" for="input-tarde">Seg. a Sexta - Período da
                                     tarde</label>
                             </div>
 
                             <div class="form-check">
-                                <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-check-input" type="checkbox" name="disp4" id="input-noite" value="noite">
+                                <input [(ngModel)]="disponibilidade['Noite']" class="form-check-input" type="checkbox" name="disp4" id="input-noite" value="noite">
                                 <label class="form-check-label" for="input-noite">Seg. a Sexta - Período da
                                     noite</label>
                             </div>
@@ -113,14 +116,14 @@
                             <div class="form-check">
                                 <div class="form-others">
                                     <label for="text-input" class="form-check-label">Outros:</label>
-                                    <input [(ngModel)]="data.records[0].fields['Disponibilidade para contato']" class="form-control" type="text" name="disp5" id="text-input">
+                                    <input [(ngModel)]="disponibilidade['Outros']" class="form-control" type="text" name="disp5" id="text-input">
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div id="buttons">
-                        <button class="btn cancel--button">Cancelar</button>
+                        <button type="reset" class="btn cancel--button">Cancelar</button>
                         <button type="submit" class="btn send--button">Enviar</button>
                     </div>
                 </div>

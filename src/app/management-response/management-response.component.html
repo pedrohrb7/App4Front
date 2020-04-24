@@ -1,49 +1,40 @@
 <!-- START SECTION - RESPONSE__MANAGEMENT -->
-<div class="container">
-    <div class="title">
-        <h3>Gerenciamento de Respostas</h3>
-    </div>
-    <section class="management" id="management">
 
-        <div class="management__list" *ngFor="let list of listar;">            
-            <div class="list__name">
-                {{list.fields.Nome}}
-            </div>
-            <div class="list__email">
-                {{list.fields.Email}}
-            </div>
-            <div class="list__phone">
-                {{list.fields.Telefone}}
-            </div>
-            <div class="list__contact__form">
-                {{list.fields['Forma de contato']}}
-            </div>
-            <div class="list__availability__contact">
-                {{list.fields['Disponibilidade para contato']}}
-            </div>
-            <div class="list__subject">
-                {{list.fields.Assunto}}
-            </div>
-            <div class="list__content">
-                {{list.fields['Conteúdo']}}
-            </div>
-        </div>
-    </section>
-    <div class="holder">
-        <a class="jp-previous jp-disabled">← Anterior</a>
-        <a class="jp-current">1</a>
-        <span class="jp-hidden">...</span>
-        <a>2</a>
-        <a>3</a>
-        <a>4</a>
-        <a>5</a>
-        <a class="jp-hidden">6</a>
-        <a class="jp-hidden">7</a>
-        <a class="jp-hidden">8</a>
-        <a class="jp-hidden">9</a>
-        <span>...</span>
-        <a>10</a>
-        <a class="jp-next">Próximo →</a>
-    </div>
+
+<div class="container">
+  <div class="title">
+    <h3>Gerenciamento de Respostas</h3>
+  </div>
+  <table class="management" id="management">
+    <tbody>
+      <tr class="management__list" *ngFor="let list of listar | paginate: { itemsPerPage: 3, currentPage: pag };">
+        <td class="list__name">
+          {{list.fields.Nome}}
+        </td>
+        <td class="list__email">
+          {{list.fields.Email}}
+        </td>
+        <td class="list__phone">
+          {{list.fields.Telefone}}
+        </td>
+        <td class="list__contact__form">
+          {{list.fields['Forma de contato']}}
+        </td>
+        <td class="list__availability__contact">
+          {{list.fields['Disponibilidade para contato']}}
+        </td>
+        <td class="list__subject">
+          {{list.fields.Assunto}}
+        </td>
+        <td class="list__content">
+          {{list.fields['Conteúdo']}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="pages">
+    <pagination-controls (pageChange)="pag = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+  </div>
 </div>
 <!-- END SECTION - RESPONSE__MANAGEMENT -->

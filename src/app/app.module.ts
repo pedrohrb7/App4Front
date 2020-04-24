@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component } from '@angular/core';
+import { NgModule, Component, NgModuleDecorator } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -13,7 +15,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ManagementResponseComponent } from './management-response/management-response.component';
 import { UserComponent } from './user/user.component';
-import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 const routes: Routes = [
   {path:"home", component: HomeComponent},
@@ -39,7 +42,9 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   exports: [
     RouterModule

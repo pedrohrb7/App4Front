@@ -1,8 +1,6 @@
-import { Component, OnInit, NgModule } from '@angular/core';
-
-import { QuestionarioService } from './../services/questionario.service';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-;
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { QuestionarioService } from '../services/questionario.service';
 
 @Component({
   templateUrl: './home.component.html',
@@ -11,92 +9,34 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 export class HomeComponent implements OnInit {
 
-form: FormBuilder;
+constructor(
+  private http: HttpClient,
+  private questionario: QuestionarioService
+){ }
 
-disponibilidade =  ['Manhã', 'Tarde', 'Noite', 'Outro'];
-
-
-  constructor(private fb:FormBuilder, private service: QuestionarioService) {
-    console.log(this.registro.records[0].fields['Disponibilidade para contato']);
-  }
-
-  registro:any = {
-    "records": [
-      {
-        "fields": {
-          "Nome": "",
-          "Email": "",
-          "Telefone": "",
-          "Forma de contato": "",
-          "Disponibilidade para contato": "",
-          "Assunto": "",
-          "Conteúdo": ""
-        }
+data:any = {
+  "records": [
+    {
+      "fields": { 
+        "Nome": " ",
+        "Email": " ",
+        "Telefone": " ",
+        "Conteúdo": " ",
+        "Forma de contato": " ",
+        "Disponibilidade para contato": " "
       }
-        ]
-        };
-
-        listaChecks = [
-          { id:1, name:'comercial', description: "Segunda a Sexta - Horário comercial", value:'comercial', tick:false},
-          { id:2, name:'manha', description: "Segunda a Sexta - Período da manhã", value:'manhã', tick:false},
-          { id:3, name:'tarde', description: "Segunda a Sexta - Período da tarde", value:'tarde', tick:false},
-          { id:4, name:'noite', description: "Segunda a Sexta - Período da noite", value:'noite', tick:false}
-          ];
-
+    }
+  ]
+}
 
 cadastrar (){
-  let teste = [];
-  for (let key in this.listaChecks) {
-    let check = this.listaChecks[key];
-    if(check.tick){
-      teste.push(check.value);
-    console.log("CHECADO ", check);
+  console.log('ta indo')  
+  this.questionario.postData(this.data).subscribe(res => {
+  console.log(res)
+  })
+}
+  ngOnInit(): void {
   }
-}
-
-let valor = "";
-
-for (let i=0; i < teste.length; i++){
-  valor+= teste[i] + " ";
-}
-
-// valor = JSON.stringify(teste);
-
-
- this.registro.records[0].fields["Disponibilidade para contato"] = valor;
-  this.service.postData(this.registro).subscribe();
-    console.log(this.registro);
-    console.log('registrou');
-  };
-
-// constructor(private questionarioservice: QuestionarioService){ }
-
-ngOnInit() {
-
-  const values  = this.disponibilidade.map(v => new FormControl(false));
-
-  return this.fb.array(values);
-  // this.fields = {};
-  
-
-//   this.fields = this.fb.group({
-//     Nome: [null],
-//     Email: [null]
-//   });
-}
-
-onSubmit(){
-
-//   console.log(this.fields.value)
-//   if (this.fields.valid){
-//     console.log('submit');
-//     this.service.postData(this.fields.value).subscribe();
-//   }
-}
-
-onCancel(){
-  this.registro.reset();
-}
 
 }
 

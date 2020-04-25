@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class QuestionarioService {
 
-  private apiurl = 'https://api.airtable.com/v0/appYtQmjCS4p0n2dY/tbl0WBTLYCbmd2Dd6?maxRecords=10&api_key=keyfV0AwOq2Pctb5Y';
+  private apiurl = 'https://api.airtable.com/v0/appYtQmjCS4p0n2dY/tbl0WBTLYCbmd2Dd6?api_key=keyfV0AwOq2Pctb5Y';
   private apiurlPost = 'https://api.airtable.com/v0/appYtQmjCS4p0n2dY/Question%C3%A1rio?api_key=keyfV0AwOq2Pctb5Y';
 
   constructor(private http: HttpClient) { }

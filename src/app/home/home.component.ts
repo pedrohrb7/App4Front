@@ -30,7 +30,7 @@ data:any = {
   ]
 }
 
-disponibilidade:any = {
+auxDisponibilidade:any = {
   "Comercial": " ",
   "Manha": " ",
   "Tarde": " ",
@@ -42,31 +42,33 @@ enviado: boolean = false;
 
 
 cadastrar (){
-  console.log('ta indo') 
-
   let aux = []
   
-  if (this.disponibilidade["Comercial"]) {
+  if (this.auxDisponibilidade["Comercial"]) {
     aux.push("comercial")
   }
-  if (this.disponibilidade["Manha"]) {
+  if (this.auxDisponibilidade["Manha"]) {
     aux.push("manha")
   }
-  if (this.disponibilidade["Tarde"]) {
+  if (this.auxDisponibilidade["Tarde"]) {
     aux.push("tarde")
   }
-  if (this.disponibilidade["Noite"]) {
+  if (this.auxDisponibilidade["Noite"]) {
     aux.push("noite")
   }
-  if (this.disponibilidade["Outros"] != "" ){
-    aux.push(this.disponibilidade["Outros"]);
+  if (this.auxDisponibilidade["Outros"] != "" ){
+    aux.push(this.auxDisponibilidade["Outros"]);
   }
+
+  let disponibilidade = "";
+
+  for (let i=0; i < aux.length; i++){
+    disponibilidade += aux[i] + " ";
+  }
+
+  this.data.records[0].fields["Disponibilidade para contato"] = disponibilidade;
   
-  this.data.records[0].fields["Disponibilidade para contato"] = JSON.stringify(aux);
-  
-  this.questionario.postData(this.data).subscribe(res => {
-  console.log(res)
-  })
+  this.questionario.postData(this.data).subscribe()
 
   this.enviado = true;
 

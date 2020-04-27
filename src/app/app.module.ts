@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ManagementResponseComponent } from './management-response/management-response.component';
 import { UserComponent } from './user/user.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 const routes: Routes = [
@@ -24,6 +25,8 @@ const routes: Routes = [
   {path:"about", component: AboutComponent},
   {path:"management-response", component: ManagementResponseComponent}
 ];
+
+
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxMaskModule.forRoot({
+      validation: true,
+    })
   ],
   exports: [
     RouterModule

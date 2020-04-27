@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { QuestionarioService } from '../services/questionario.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   templateUrl: './home.component.html',
@@ -8,33 +9,33 @@ import { QuestionarioService } from '../services/questionario.service';
 })
 
 export class HomeComponent implements OnInit {
+  
 
 constructor(
   private http: HttpClient,
-  private questionario: QuestionarioService){
-}
+  private questionario: QuestionarioService){}
 
 data:any = {
   "records": [
     {
       "fields": { 
-        "Nome": " ",
-        "Email": " ",
-        "Telefone": " ",
-        "Assunto": " ",
-        "Conteúdo": " ",
-        "Forma de contato": " ",
-        "Disponibilidade para contato": " "
+        "Nome": "",
+        "Email": "",
+        "Telefone": "",
+        "Assunto": "",
+        "Conteúdo": "",
+        "Forma de contato": "",
+        "Disponibilidade para contato": ""
       }
     }
   ]
 }
 
 auxDisponibilidade:any = {
-  "Comercial": " ",
-  "Manha": " ",
-  "Tarde": " ",
-  "Noite": " ",
+  "Comercial": false,
+  "Manha": false,
+  "Tarde": false,
+  "Noite": false,
   "Outros": ""
 }
 

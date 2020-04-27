@@ -38,38 +38,56 @@ label {
     margin-top: 15px;
 }
 
+.form--content .form-control {
+    outline: none;
+    margin-top: -5px;
+    resize: none;
+    border: 1px solid rgb(170, 170, 170);
+}
+
+.form--content .form-control:focus {
+    border: 1px solid rgb(48, 191, 151);
+    box-shadow: 0 0 3px 0px rgb(48, 191, 151);
+}
+
 form .send--button {
     border: none;
     background: rgb(48, 191, 151);
-    border-radius: 25px;
+    border-radius: 8px;
     color: rgb(255, 255, 255);
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'open sans bold';
-    padding: 0 25px;
-    margin-top: 15px;
+    padding: 5px 20px;
+    margin: 10px;
+    width: 120px;
 }
 
-.send--button:hover {
+form .send--button:hover {
     text-decoration: none;
     background: rgb(37, 143, 113);
-    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+form .send--button:disabled {
+    cursor: auto;
+    background: rgb(170, 170, 170);
 }
 
 .cancel--button {
-    border: none;
-    background: transparent;
-    border-radius: 25px;
-    font-size: 18px;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 8px;
+    font-size: 14px;
     font-family: 'open sans bold';
     color: rgb(170, 170, 170);
-    padding: 0 20px;
-    margin-top: 15px;
-    margin-right: 5px;
+    padding: 5px 20px;
+    margin: 10px;
+    width: 120px;
 }
 
 .cancel--button:hover {
-    color: rgb(119, 119, 119);
+    color: rgb(119, 119, 119); 
 }
+
 
 .form--content__contact {
     border-radius: 5px;
@@ -84,4 +102,12 @@ form .send--button {
 
 .form--content__contact h3 {
     font-size: 18px;
+}
+
+.alert.alert-danger {
+    background: none;
+    border: none;
+    color: red;
+    padding: 0;
+    font-size: 14px;
 }
